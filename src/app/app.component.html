@@ -1,0 +1,54 @@
+<div class="container">
+  <form [formGroup]="myForm">
+    <div class="value">
+      Value: {{ myForm.value | json }}
+    </div>
+    <br>
+
+    <mat-form-field class="fields">
+      <input matInput required placeholder="Name" formControlName="firstName">
+    </mat-form-field>
+
+    <mat-form-field class="fields">
+      <input matInput required placeholder="Surname" formControlName="LastName">
+    </mat-form-field>
+
+    <mat-form-field class="fields">
+      <input matInput required [matDatepicker]="picker" type="text" placeholder="Date of birth" formControlName="dateOfBirth">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field class="fields">
+      <mat-label>framework</mat-label>
+      <select matNativeControl required id="tech" formControlName="framework" (change)="versionSelect()">
+        <option value=""></option>
+        <option *ngFor="let item of technologies">{{item}}</option>
+      </select>
+    </mat-form-field>
+
+    <mat-form-field id="ver" class="fields">
+      <mat-label>Version</mat-label>
+      <select matNativeControl required id="verSel" formControlName="frameworkVersion">
+        <option value=""></option>
+      </select>
+    </mat-form-field>
+
+    <mat-form-field class="fields">
+      <input matInput required placeholder="Email" formControlName="email">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field style="width: 600px;" class="fields">
+      <textarea matInput required placeholder="Your hobbies" formControlName="hobby"></textarea>
+    </mat-form-field>
+
+    <br>
+
+    <button mat-stroked-button color="primary" (click)="submit()">Submit</button>
+
+  </form>
+</div>

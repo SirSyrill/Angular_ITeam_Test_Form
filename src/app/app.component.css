@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.value{
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.fields{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#ver {
+    display: none;
+}
